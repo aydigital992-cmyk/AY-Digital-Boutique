@@ -140,7 +140,7 @@ const lst=(ty,title,f)=>`<div class="box"><h2>${title}</h2>${D[ty].length?`<tabl
 const V={
 home(){return `<section class="hero"><h1>${t("h1")}</h1><p>${t("h2")}</p><a class="btn" href="#/signup">${t("start")}</a> <a class="btn g" href="#/cats" style="color:#fff;border-color:#fff8">${t("browse")}</a></section>
 <h2>${t("cats")}</h2><div class="grid">${D.cats.map(cardC).join("")}</div>
-<h2>${t("featured")}</h2><div class="grid">${D.products.slice(0,4).map(cardP).join("")||`<p class="mut">${t("empty")}</p>`}</div>`},
+<h2>${t("featured")}</h2><div class="grid">${D.products.slice(cardP).map(cardP).join("")||`<p class="mut">${t("empty")}</p>`}</div>`},
 cats(){return `<h1>${t("cats")}</h1><div class="grid">${D.cats.map(cardC).join("")}</div>`},
 cat(id){const c=byId(D.cats,id);if(!c)return V.home();return `<a href="#/cats" class="mut">${t("back")}</a><h1>${esc(cn(c))}</h1><div class="grid">${D.products.filter(p=>p.c===id).map(cardP).join("")||`<p class="mut">${t("empty")}</p>`}</div>`},
 shops(){return `<h1>${t("shops")}</h1><div class="box"><p>${L==="ar"?"لائحة التجار المسجلين خاصة بالإدارة. كل تاجر يدخل من فضائه الخاص.":"La liste des commerçants est réservée à l’administration. Chaque vendeur dispose de son propre espace."}</p><a class="btn b" href="#/seller">${L==="ar"?"دخول التاجر":"Espace vendeur"}</a></div>`},
